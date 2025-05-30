@@ -12,6 +12,16 @@ export default class UndoButton extends Phaser.GameObjects.Text {
         this.setOrigin(0, 1);
         let shape = new Phaser.Geom.Rectangle(0, 0, this.width, this.height);
         this.setInteractive(shape, Phaser.Geom.Rectangle.Contains);
+        // 默认隐藏按钮
+        this.setVisible(false);
+    }
+
+    /**
+     * 显示或隐藏回退按钮
+     * @param visible true为显示，false为隐藏
+     */
+    toggleVisible(visible: boolean): void {
+        this.setVisible(visible);
     }
 }
 
